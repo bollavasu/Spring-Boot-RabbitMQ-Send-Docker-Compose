@@ -1,0 +1,8 @@
+
+1)mvn clean install
+
+2)docker-compose up
+
+3)http://localhost:8092/javainuse-rabbitmq/producer?empName=emp1&empId=emp001
+
+4)go to RabbitMQ console and check the message in Queue

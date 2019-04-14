@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  rabbitmq-service:
+    container_name: rabbitmq-container
+    hostname: rabbit-host
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+  rabbitmq-send-service:
+    container_name: rabbitmq-send-container
+    image: rabbitmq-send-image
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    links:
+      - rabbitmq-service
+    ports:
+      - 8090:8080
